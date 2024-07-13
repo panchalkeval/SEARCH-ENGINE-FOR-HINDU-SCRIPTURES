@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puranas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/download.png">
+
+  <style>
+
+    .Puranas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1rem; /* Adjust the top padding as needed */
+      padding-bottom: 1rem; /* Adjust the bottom padding as needed */
+      }
+  
+  .Puranas a {
+      text-decoration: none;
+      display: grid;
+      color: rgba(255, 217, 0, 0.91);
+      font-size: 1em;
+  }
+
+  .container .overview-link a {
+    text-decoration: none;
+    color: rgba(255, 217, 0, 0.91);
+    font-size: 2.3em;
+}
+.container{
+  width: 100vw;
+}
+  :root {
+    --min-font-size: 0.7em;
+    --max-font-size: 1em;
+    --min-width: 280px;
+    --max-width: 1920px;
+    --overview-min-font-size: 1.7em;
+    --overview-max-font-size: 2.3em;
+}
+
+  .container a {
+    font-size: clamp(var(--min-font-size), calc(var(--min-font-size) + 1vw), var(--max-font-size));
+}
+
+  .container .overview-link a {
+    font-size: clamp(var(--overview-min-font-size), calc(var(--overview-min-font-size) + 1vw), var(--overview-max-font-size));
+}
+
+
+</style>
+</head>
+<body>
+  <div id="parentElement" class="container">
+    <div class="Puranas">
+      <!-- Generated HTML elements will be appended here -->
+    </div>
+  </div>
+
+  <script>
+    // Sample data representing the directory listing
+    const directoryListing = [
+      "Agni Purana",
+      "Bhagavata Purana",
+      "Bhavishya Purana",
+      "Brahma Purana",
+      "Brahmaanda Purana",
+      "Brahmavaivarta Purana",
+      "Garuda Purana",
+      "Kurma Purana",
+      "Linga Purana",
+      "Markandeya Purana",
+      "Matsya Purana",
+      "Narada Purana",
+      "Padma Purana",
+      "Shiva Purana",
+      "Skanda Purana",
+      "Vamana Purana",
+      "Varaha Purana",
+      "Vayu Purana",
+      "Vishnu Purana"
+    ];
+
+    // Function to generate HTML for the directory listing
+    function generateDirectoryListing(directoryListing) {
+      const containerDiv = document.createElement('div');
+      containerDiv.classList.add('container');
+
+      const directoryDiv = document.createElement('div');
+      directoryDiv.classList.add('Puranas');
+
+      directoryListing.forEach(directory => {
+        const olElement = document.createElement('ol');
+        olElement.classList.add('overview-link');
+
+        const aElement = document.createElement('a');
+        aElement.classList.add('overview-link');
+        const fileName = directory.replace(/\s/g, '') + '.html'; // Replace spaces with empty string and add .html extension
+        aElement.href = fileName.toLowerCase();
+        aElement.textContent = directory;
+
+        olElement.appendChild(aElement);
+        directoryDiv.appendChild(olElement);
+      });
+
+      containerDiv.appendChild(directoryDiv);
+      return containerDiv;
+    }
+
+    // Get the parent element where you want to append the directory listing
+    const parentElement = document.getElementById('parentElement');
+    const directoryListingHtml = generateDirectoryListing(directoryListing);
+    parentElement.appendChild(directoryListingHtml);
+  </script>
+</body>
+</html>

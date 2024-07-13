@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Hindu Religious texts</title>
+    <!-- Corrected the typo in the 'stylesheet' attribute -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/download.png">
+    <style>
+        .search-box {
+            transition: transform all 0.3s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="search-box">
+            <form onsubmit="search(); return false;" method="get" class="search-bar">
+                <input type="text" placeholder="search anything" id="search-input" name="q">
+                <button type="submit"><img src="images/search.png" alt="Search"></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="search-results">
+        <!-- Search results will be displayed here -->
+    </div>
+
+    <script>
+        // Linear equation parameters
+        const slope = 0.029;
+        const intercept = 71;
+    
+        // Function to calculate scale based on the linear equation
+        const calculateScale = (width) => {
+            return slope * width + intercept;
+        };
+    
+        function scaleSearchBox() {
+            // Get the search box element
+            const searchBox = document.querySelector('.search-box');
+    
+            // Get the current screen width
+            const currentWidth = window.innerWidth;
+    
+            // Calculate the scaling factor based on the linear equation
+            const scalePercentage = calculateScale(currentWidth);
+    
+            // Apply the scaling using CSS transform property
+            searchBox.style.transform = `scale(${scalePercentage / 100})`;
+        }
+    
+        // Attach the scaleSearchBox function to the window resize event
+        window.addEventListener('resize', scaleSearchBox);
+    
+        // Initial scaling on page load
+        scaleSearchBox();
+    </script>
+
+    <script src="search.js"></script> <!-- Add this line to include your JavaScript file -->
+
+    <style>
+        .search-results a {
+            text-decoration: none;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: center;
+        }
+    </style>
+
+</body>
+</html>

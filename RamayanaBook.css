@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.top-bar {
+  background-color: hsla(246, 97%, 7%, 0.83);
+  color: #ffffff;
+  padding: 0.37rem;
+}
+
+
+
+.page-info {
+  margin-left: 1rem;
+}
+
+.error {
+  background: orangered;
+  padding: 1rem;
+}
+
+#the-svg {
+  scale: 123%;
+  transform: translateY(-3%);
+  height: 100vh;
+  display: flex;
+}
+
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(hsla(246, 97%, 7%, 0.83), hsla(279, 97%, 9%, 0.83));
+}
+
+
+#the-svg text tspan {
+  fill: hsl(61, 97%, 59%);
+  word-wrap: break-word;
+}
+
+#the-svg path {
+  fill:none;
+  word-wrap: break-word;
+  stroke-opacity:0;
+}
+
+

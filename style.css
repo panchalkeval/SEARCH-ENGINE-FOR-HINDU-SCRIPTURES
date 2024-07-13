@@ -1,0 +1,132 @@
+ *{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    background-image: linear-gradient(rgba(0, 7, 51, 0.83), rgba(0, 8, 51, 0.85)), url(images/bg.png);
+    width: auto;
+    height: 100svh; /* Use viewport height for full-page coverage */
+    padding: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: safe center;
+    justify-content: safe center;
+    overflow: auto;
+    box-sizing: content-box;
+}
+
+
+.search-box {
+    
+.search-bar {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.2); /* Adjusted the background color with transparency */
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 8px 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: #cac7ff;
+}
+
+::placeholder {
+    color: #cac7ff;
+}
+
+.search-bar button img {
+    width: 25px;
+}
+
+.search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to right, #58629b, #8a8bbf);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-bar button:hover {
+    transform: scale(1.1);
+}
+}
+
+.overview-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    width: 100svw;
+    background-image: linear-gradient(hsla(246, 97%, 7%, 0.83), hsla(279, 97%, 9%, 0.83));
+    padding: 0;
+    margin: 0%;
+    border-width: 0px;
+    overflow: auto;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-box {
+    position: absolute;
+}
+/*@media (width <= 2560px) {
+    .search-box {
+        scale: 133%;
+}
+}
+@media (width <= 1920px) {
+    .search-box {
+        scale: 100%;
+}
+
+@media (394px <= width <= 768px) {
+    .search-box {
+        scale: 89%;
+}
+}
+}*/
+@media (320px <= width <= 391px) {
+    .search-box {
+        scale: 100%;
+}
+}
+@media (width <= 320px) {
+    .search-box {
+        scale: 97%;
+}
+}
+  
+@media only screen and (max-width: 280px), only screen and (max-height: 640px) {
+    .container,
+    .overview-container {
+        display: none;
+    }
+}
+
+
+.search-results {
+    padding:2rem;
+}
